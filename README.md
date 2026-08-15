@@ -1,50 +1,101 @@
-# gqs-algoritmo-01-py
+# 🔄 Verificador de Palíndromos
 
-Um algoritmo simples em Python que verifica se um texto é um **palíndromo** — ou seja, se ele se lê da mesma forma de trás para frente, ignorando espaços, acentuação, pontuação e diferenças entre maiúsculas e minúsculas.
+![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/Licença-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Concluído-success?style=for-the-badge)
 
-## Pré-requisitos
+Um algoritmo em Python que verifica se um texto é um **palíndromo** — uma frase ou palavra que se lê da mesma forma de trás para frente! 🪞
 
-- [Python 3](https://www.python.org/downloads/) instalado na máquina
+> [!NOTE]
+> Este projeto foi desenvolvido como atividade prática da disciplina de **Garantia da Qualidade de Software**, com foco em documentação técnica.
 
-## Como instalar
+---
 
-Clone este repositório:
+## 📖 O que é um palíndromo?
+
+Palíndromo é toda palavra, frase ou número que permanece **igual quando lido ao contrário**, ignorando espaços, acentos e pontuação. Alguns exemplos clássicos:
+
+- 🔤 **Palavras:** arara, ovo, radar
+- 💬 **Frases:** "A sacada da casa de cadasa"
+- 🚌 **A mais famosa em português:** "Socorram-me, subi no ônibus em Marrocos"
+
+---
+
+## ⚙️ Como o algoritmo funciona
+
+O coração do projeto é a função `analisar()`, que segue 3 passos:
+
+| Etapa | O que acontece | Ferramenta usada |
+|:---:|---|---|
+| 1️⃣ | Remove espaços, acentos e pontuação; converte tudo para minúsculas | `re.sub()` (expressões regulares) |
+| 2️⃣ | Inverte o texto já limpo | Fatiamento `[::-1]` |
+| 3️⃣ | Compara o texto original limpo com o invertido | Operador `==` |
+
+Se os dois forem **iguais**, o texto é um palíndromo! ✅
+
+> [!TIP]
+> A função também trata entradas vazias: se você passar `None`, ela retorna `False` direto, sem quebrar o programa.
+
+---
+
+## 🚀 Como rodar o projeto
+
+### Pré-requisitos
+
+![Python](https://img.shields.io/badge/Requer-Python%203.6+-blue?style=flat-square)
+
+Você precisa ter o [Python 3](https://www.python.org/downloads/) instalado. Para conferir sua versão:
 
 ```bash
-git clone https://github.com/JoTaP-MX/gqs-algoritmo-01-py.git
+python --version
+```
+
+### Instalação
+
+```bash
+git clone https://github.com/SEU-USUARIO/gqs-algoritmo-01-py.git
 cd gqs-algoritmo-01-py
 ```
 
-## Como usar
-
-Execute o script diretamente pelo terminal:
+### Executando
 
 ```bash
 python DesafioLogica.py
 ```
 
-### Exemplo de saída
+---
+
+## 🧪 Exemplo de saída
+
+Ao rodar o script, dois testes são executados automaticamente:
 
 Teste 1: True
 Teste 2: True
 
-## Como funciona
+| Entrada | Resultado |
+|---|:---:|
+| `"A sacada da casa de cadasa"` | ✅ `True` |
+| `"Socorram-me, subi no ônibus em Marrocos"` | ✅ `True` |
+| `"Isso não é um palíndromo"` | ❌ `False` |
 
-O algoritmo segue três etapas principais dentro da função `analisar()`:
+> [!IMPORTANT]
+> O algoritmo ignora maiúsculas, acentos e pontuação — por isso frases com vírgulas e acentos ainda são reconhecidas como palíndromos.
 
-1. **Limpa o texto**: remove tudo que não é letra ou número e converte tudo para minúsculas, usando expressões regulares (`re.sub`).
-2. **Inverte o texto**: usa fatiamento (`[::-1]`) para criar a versão invertida da string já limpa.
-3. **Compara**: verifica se o texto limpo é igual ao texto invertido. Se forem iguais, é um palíndromo.
+---
 
-## Tecnologias utilizadas
+## 🛠️ Tecnologias utilizadas
 
-- Python 3
-- Módulo `re` (expressões regulares, da biblioteca padrão)
+- 🐍 **Python 3**
+- 📦 Módulo `re` (expressões regulares — biblioteca padrão do Python)
 
-## Autor
+---
 
-Daniel Paiva
+## 👤 Autor
 
-## Licença
+Feito com 💻 por **Daniel Paiva**
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
